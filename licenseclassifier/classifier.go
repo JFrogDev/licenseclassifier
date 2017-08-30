@@ -26,7 +26,7 @@ import (
 	"io/ioutil"
 	"math"
 	"os"
-	"path/filepath"
+	//"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -35,6 +35,7 @@ import (
 
 	"github.com/google/licenseclassifier/stringclassifier"
 	"github.com/google/licenseclassifier/stringclassifier/searchset"
+	"errors"
 )
 
 // DefaultConfidenceThreshold is the minimum confidence percentage we're willing to accept in order
@@ -82,6 +83,9 @@ type License struct {
 
 // New creates a license classifier and pre-loads it with known open source licenses.
 func New(threshold float64) (*License, error) {
+	if len(LicenseDirectory) == 0 {
+		return nil,errors.New("Licenses directory is not specified")
+	}
 	classifier := &License{
 		c:         stringclassifier.New(stringclassifier.DefaultConfidenceThreshold, Normalizers...),
 		Threshold: threshold,
@@ -172,10 +176,16 @@ func (c *License) hasCommonLicenseWords(s string) bool {
 	return false
 }
 
+// set licenses directory where all licenses are located
+func LicensesDir(licensesDir string){
+	LicenseDirectory  = licensesDir
+}
+
+// LicenseDirectory is the directory where the prototype licenses are kept.
+var LicenseDirectory = ""
+
 const (
-	// LicenseDirectory is the directory where the prototype licenses are kept.
-	LicenseDirectory = "src/github.com/google/licenseclassifier/licenseclassifier/licenses"
-	// LicenseArchive is the name of the archive containing preprocessed
+ 	// LicenseArchive is the name of the archive containing preprocessed
 	// license texts.
 	LicenseArchive = "licenses.db"
 	// ForbiddenLicenseArchive is the name of the archive containing preprocessed
@@ -185,35 +195,12 @@ const (
 
 // ReadLicenseFile locates and reads the license file.
 func ReadLicenseFile(filename string) ([]byte, error) {
-	for _, path := range filepath.SplitList(os.Getenv("GOPATH")) {
-		archive := filepath.Join(path, LicenseDirectory, filename)
-		if _, err := os.Stat(archive); err != nil {
-			if os.IsNotExist(err) {
-				continue
-			}
-			return nil, err
-		}
-
-		return ioutil.ReadFile(archive)
-	}
-	return nil, nil
+		return ioutil.ReadFile(LicenseDirectory+filename)
 }
 
 // ReadLicenseDir reads directory containing the license files.
 func ReadLicenseDir() ([]os.FileInfo, error) {
-	for _, path := range filepath.SplitList(os.Getenv("GOPATH")) {
-		dir := filepath.Join(path, LicenseDirectory)
-		filename := filepath.Join(dir, LicenseArchive)
-		if _, err := os.Stat(filename); err != nil {
-			if os.IsNotExist(err) {
-				continue
-			}
-			return nil, err
-		}
-
-		return ioutil.ReadDir(dir)
-	}
-	return nil, nil
+		return ioutil.ReadDir(LicenseDirectory)
 }
 
 type archivedValue struct {
