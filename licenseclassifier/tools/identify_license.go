@@ -36,9 +36,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/google/licenseclassifier/licenseclassifier"
-	"github.com/google/licenseclassifier/licenseclassifier/internal/commentparser"
-	"github.com/google/licenseclassifier/licenseclassifier/internal/commentparser/language"
+	"github.com/JFrogDev/licenseclassifier/licenseclassifier"
+	"github.com/JFrogDev/licenseclassifier/licenseclassifier/internal/commentparser"
+	"github.com/JFrogDev/licenseclassifier/licenseclassifier/internal/commentparser/language"
 )
 
 var (

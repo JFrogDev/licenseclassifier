@@ -24,7 +24,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/google/licenseclassifier/licenseclassifier/internal/commentparser/language"
+	"github.com/JFrogDev/licenseclassifier/licenseclassifier/internal/commentparser/language"
 )
 
 const (

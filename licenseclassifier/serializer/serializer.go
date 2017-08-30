@@ -26,8 +26,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/google/licenseclassifier/licenseclassifier"
-	"github.com/google/licenseclassifier/stringclassifier/searchset"
+	"github.com/JFrogDev/licenseclassifier/licenseclassifier"
+	"github.com/JFrogDev/licenseclassifier/stringclassifier/searchset"
 )
 
 // ArchiveLicenses takes all of the known license texts, normalizes them, then

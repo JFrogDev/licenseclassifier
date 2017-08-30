@@ -27,9 +27,9 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/google/licenseclassifier/licenseclassifier"
-	"github.com/google/licenseclassifier/licenseclassifier/internal/sets"
-	"github.com/google/licenseclassifier/stringclassifier/searchset"
+	"github.com/JFrogDev/licenseclassifier/licenseclassifier"
+	"github.com/JFrogDev/licenseclassifier/licenseclassifier/internal/sets"
+	"github.com/JFrogDev/licenseclassifier/stringclassifier/searchset"
 )
 
 var (
