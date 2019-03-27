@@ -33,8 +33,8 @@ import (
 	"sync"
 	"unicode"
 
-	"github.com/JFrogDev/licenseclassifier/stringclassifier"
-	"github.com/JFrogDev/licenseclassifier/stringclassifier/searchset"
+	"github.com/jfrog/licenseclassifier/stringclassifier"
+	"github.com/jfrog/licenseclassifier/stringclassifier/searchset"
 	"errors"
 )
 
