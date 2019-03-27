@@ -46,7 +46,7 @@ import (
 	"io"
 	"sort"
 
-	"github.com/JFrogDev/licenseclassifier/stringclassifier/searchset/tokenizer"
+	"github.com/Jfrog/licenseclassifier/stringclassifier/searchset/tokenizer"
 )
 
 // DefaultGranularity is the minimum size (in words) of the hash chunks.

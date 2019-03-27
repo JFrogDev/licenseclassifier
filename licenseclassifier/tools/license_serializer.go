@@ -27,8 +27,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/JFrogDev/licenseclassifier/licenseclassifier"
-	"github.com/JFrogDev/licenseclassifier/licenseclassifier/serializer"
+	"github.com/Jfrog/licenseclassifier/licenseclassifier"
+	"github.com/Jfrog/licenseclassifier/licenseclassifier/serializer"
 )
 
 var (

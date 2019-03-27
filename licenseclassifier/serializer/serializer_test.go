@@ -27,8 +27,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JFrogDev/licenseclassifier/licenseclassifier"
-	"github.com/JFrogDev/licenseclassifier/stringclassifier/searchset"
+	"github.com/Jfrog/licenseclassifier/licenseclassifier"
+	"github.com/Jfrog/licenseclassifier/stringclassifier/searchset"
 )
 
 var (
