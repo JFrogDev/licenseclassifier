@@ -52,8 +52,8 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/Jfrog/licenseclassifier/stringclassifier/internal/pq"
-	"github.com/Jfrog/licenseclassifier/stringclassifier/searchset"
+	"github.com/jfrog/licenseclassifier/stringclassifier/internal/pq"
+	"github.com/jfrog/licenseclassifier/stringclassifier/searchset"
 	"github.com/sergi/go-diff/diffmatchpatch"
 )
 

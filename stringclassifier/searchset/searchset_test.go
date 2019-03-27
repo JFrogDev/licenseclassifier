@@ -17,7 +17,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Jfrog/licenseclassifier/stringclassifier/searchset/tokenizer"
+	"github.com/jfrog/licenseclassifier/stringclassifier/searchset/tokenizer"
 )
 
 const (

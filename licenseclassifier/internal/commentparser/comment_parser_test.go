@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Jfrog/licenseclassifier/licenseclassifier/internal/commentparser/language"
+	"github.com/jfrog/licenseclassifier/licenseclassifier/internal/commentparser/language"
 )
 
 const (

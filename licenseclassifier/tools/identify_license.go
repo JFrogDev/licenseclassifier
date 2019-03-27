@@ -36,15 +36,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Jfrog/licenseclassifier/licenseclassifier"
-	"github.com/Jfrog/licenseclassifier/licenseclassifier/internal/commentparser"
-	"github.com/Jfrog/licenseclassifier/licenseclassifier/internal/commentparser/language"
+	"github.com/jfrog/licenseclassifier/licenseclassifier"
+	"github.com/jfrog/licenseclassifier/licenseclassifier/internal/commentparser"
+	"github.com/jfrog/licenseclassifier/licenseclassifier/internal/commentparser/language"
 )
 
 var (
-	forbiddenOnly = flag.Bool("forbidden", false, "identify using forbidden licenses archive")
-	threshold     = flag.Float64("threshold", licenseclassifier.DefaultConfidenceThreshold, "confidence threshold")
-	headers       = flag.Bool("headers", false, "match license headers")
+	forbiddenOnlyIdentity = flag.Bool("forbidden", false, "identify using forbidden licenses archive")
+	threshold             = flag.Float64("threshold", licenseclassifier.DefaultConfidenceThreshold, "confidence threshold")
+	headers               = flag.Bool("headers", false, "match license headers")
 )
 
 // licenseType is the assumed type of the unknown license.
@@ -87,7 +87,7 @@ func main() {
 
 	var lc *licenseclassifier.License
 	var err error
-	if *forbiddenOnly {
+	if *forbiddenOnlyIdentity {
 		lc, err = licenseclassifier.NewWithForbiddenLicenses(*threshold)
 	} else {
 		lc, err = licenseclassifier.New(*threshold)
