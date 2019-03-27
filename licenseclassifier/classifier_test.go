@@ -20,7 +20,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JFrogDev/licenseclassifier/stringclassifier"
+	"github.com/jfrog/licenseclassifier/stringclassifier"
 )
 
 var (
